@@ -1,2 +1,2 @@
 # baseballGameJavaCode
-Java code for baseball game, and a test for connecting Github with Eclipse
+Java code for baseball game, and a test for connecting Github with Visual Studio Code.

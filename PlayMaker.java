@@ -3,6 +3,8 @@ public class PlayMaker {
 	private Team team1;
 	private Team team2;
 	private GameData gameData;
+    private Plays plays;
+    private Pitches pitches;
 
 	public PlayMaker(Team team1, Team team2, GameData gameData) {
 		this.team1 = team1;
