@@ -80,10 +80,14 @@ public class PlayMaker {
 			this.gameData.ResetCount();
 			this.gameData.EmptyBase(0);
 		}
-		else
+		else if(this.gameData.bases[0] == false)
 		{
 			System.out.println("Nobody is on first base");
 		}
+        else
+        {
+            System.out.println("Too many outs for a double play.");
+        }
 	}
 
 	private void HomeRun() {
