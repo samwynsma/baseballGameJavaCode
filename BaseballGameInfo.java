@@ -1,7 +1,7 @@
 public class BaseballGameInfo {
 	
-	public Team team1;
-	public Team team2;
+	public BallTeam team1;
+	public BallTeam team2;
 	public GameData gameData;
 	public PlayMaker playMaker;
 	public boolean isTopInning;
@@ -9,8 +9,8 @@ public class BaseballGameInfo {
 	public int inning;
 	
 	public BaseballGameInfo(String team1Name, String team2Name) {
-		this.team1 = new Team(team1Name);
-		this.team2 = new Team(team2Name);
+		this.team1 = new BallTeam(team1Name);
+		this.team2 = new BallTeam(team2Name);
 		this.gameData = new GameData(team1, team2);
 		this.playMaker = new PlayMaker(team1, team2, gameData);
 		this.isTopInning = false;

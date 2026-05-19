@@ -1,12 +1,12 @@
 public class PlayMaker {
 	
-	private Team team1;
-	private Team team2;
+	private BallTeam team1;
+	private BallTeam team2;
 	private GameData gameData;
     private Plays plays;
     private Pitches pitches;
 
-	public PlayMaker(Team team1, Team team2, GameData gameData) {
+	public PlayMaker(BallTeam team1, BallTeam team2, GameData gameData) {
 		this.team1 = team1;
 		this.team2 = team2;
 		this.gameData = gameData;

@@ -1,8 +1,8 @@
 public class GameData {
 
 	public boolean isGameOver;
-	public Team team1;
-	public Team team2;
+	public BallTeam team1;
+	public BallTeam team2;
 	public boolean[] bases;
 	public int inning;
 	public boolean isTopInning;
@@ -10,7 +10,7 @@ public class GameData {
 	public int balls;
 	public int outs;
 
-	public GameData(Team team1, Team team2) {
+	public GameData(BallTeam team1, BallTeam team2) {
 		this.team1 = team1;
 		this.team2 = team2;
 		this.inning = 1;

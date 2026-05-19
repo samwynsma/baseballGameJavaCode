@@ -1,4 +1,4 @@
-public class Team {
+public class BallTeam {
 	
 	public String name;
 	public int score;
@@ -6,7 +6,7 @@ public class Team {
 	public int errors;
 	
 	
-	public Team(String teamName) {
+	public BallTeam(String teamName) {
 		this.name = teamName;
 		this.score = 0;
 		this.hits = 0;
