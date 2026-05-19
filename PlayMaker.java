@@ -11,6 +11,7 @@ public class PlayMaker {
 		this.team2 = team2;
 		this.gameData = gameData;
 		this.pitches = new Pitches(this.gameData);
+		this.plays = new Plays(this.gameData);
 	}
 
 	public void MakePlay(String event) {
@@ -35,16 +36,16 @@ public class PlayMaker {
 			this.pitches.PassedBall();
 			break;
 		case "single":
-			Single();
+			this.plays.Single();
 			break;
 		case "double":
-			Double();
+			this.plays.Double();
 			break;
 		case "triple":
-			Triple();
+			this.plays.Triple();
 			break;
 		case "home run":
-			HomeRun();
+			this.plays.HomeRun();
 			break;
 		case "out":
 			this.pitches.Out();
@@ -94,26 +95,6 @@ public class PlayMaker {
         {
             System.out.println("Too many outs for a double play.");
         }
-	}
-
-	private void HomeRun() {
-		this.gameData.AdvanceBases(4);
-		this.gameData.ResetCount();
-	}
-
-	private void Triple() {
-		this.gameData.AdvanceBases(3);
-		this.gameData.ResetCount();
-	}
-
-	private void Double() {
-		this.gameData.AdvanceBases(2);
-		this.gameData.ResetCount();
-	}
-
-	private void Single() {
-		this.gameData.AdvanceBases(1);
-		this.gameData.ResetCount();
 	}
 
 }
