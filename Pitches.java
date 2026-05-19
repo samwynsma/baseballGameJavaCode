@@ -18,6 +18,18 @@ public class Pitches {
 		}
     }
 
+    public void Foul() {
+        System.out.println("Foul ball");
+        if(this.gameData.strikes < 2)
+        {
+			Strike();
+        }
+        else
+        {
+            System.out.println("The count is still " + this.gameData.balls + " and " + this.gameData.strikes);
+        }
+    }
+
     public void Ball() {
         this.gameData.balls++;
         System.out.println("Ball " + this.gameData.balls);
@@ -25,6 +37,26 @@ public class Pitches {
 		{
 			Walk();
 		}
+    }
+
+    public void PassedBall() {
+        System.out.println("Whoa, that pitch was a bad one. The runners all get to advance.");
+        if(this.gameData.bases[2])
+        {
+            this.gameData.bases[2] = false;
+            this.gameData.AddPoints(1);
+        }
+        if(this.gameData.bases[1])
+        {
+            this.gameData.bases[1] = false;
+            this.gameData.bases[2] = true;
+        }
+        if(this.gameData.bases[0])
+        {
+            this.gameData.bases[0] = false;
+            this.gameData.bases[1] = true;
+        }
+        Ball();
     }
 
     public void Out() {
@@ -60,6 +92,7 @@ public class Pitches {
 		}
 		this.gameData.ResetCount();
     }
+
 
     
 }

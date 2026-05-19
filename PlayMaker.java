@@ -23,13 +23,16 @@ public class PlayMaker {
 			this.pitches.Ball();
 			break;
 		case "foul":
-			Foul();
+			this.pitches.Foul();
 			break;
 		case "foul bunt":
 			this.pitches.Strike();
 			break;
 		case "intentional walk":
 			this.pitches.Walk();
+			break;
+		case "passed ball":
+			this.pitches.PassedBall();
 			break;
 		case "single":
 			Single();
@@ -44,7 +47,7 @@ public class PlayMaker {
 			HomeRun();
 			break;
 		case "out":
-			Out();
+			this.pitches.Out();
 			break;
 		case "double play":
 			DoublePlay();
@@ -105,16 +108,6 @@ public class PlayMaker {
 
 	private void Double() {
 		this.gameData.AdvanceBases(2);
-		this.gameData.ResetCount();
-	}
-
-	private void Foul() {
-		if(this.gameData.strikes < 2)
-			this.gameData.strikes++;
-	}
-
-	private void Out() {
-		this.gameData.outs++;
 		this.gameData.ResetCount();
 	}
 
