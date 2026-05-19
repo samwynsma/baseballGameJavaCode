@@ -61,6 +61,15 @@ public class PlayMaker {
 		case "pickoff first":
 			this.running.Pickoff(0);
 			break;
+		case "pickoff second":
+			this.running.Pickoff(1);
+			break;
+		case "pickoff third":
+			this.running.Pickoff(2);
+			break;
+		case "caught stealing second":
+			this.running.Steal(false, 0);
+			break;
 		default:
 			System.out.println("Invalid play");
 			break;

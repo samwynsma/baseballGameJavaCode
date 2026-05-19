@@ -32,4 +32,8 @@ public class BaseRunning {
         }
     }
 
+    public void Steal(boolean successful, int startBase) {
+        
+    }
+
 }
