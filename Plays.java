@@ -39,4 +39,37 @@ public class Plays {
         this.gameData.AdvanceBases(4);
 		this.gameData.ResetCount();
     }
+
+    public void DoublePlay() {
+        if(this.gameData.bases[0] == true && this.gameData.outs < 2)
+		{
+			this.gameData.outs += 2;
+			this.gameData.ResetCount();
+			this.gameData.EmptyBase(0);
+		}
+		else if(this.gameData.bases[0] == false)
+		{
+			System.out.println("Nobody is on first base");
+		}
+        else
+        {
+            System.out.println("Too many outs for a double play.");
+        }
+    }
+
+    public void TriplePlay() {
+        if(this.gameData.bases[0] == true && this.gameData.bases[1] == true && this.gameData.outs == 0)
+		{
+			this.gameData.outs = 3;
+			this.gameData.ResetCount();
+		}
+        else if(this.gameData.outs > 0)
+        {
+            System.out.println("Too many outs for a triple play.");
+        }
+		else
+		{
+			System.out.println("Need more people on base for a triple play.");
+		}
+    }
 }

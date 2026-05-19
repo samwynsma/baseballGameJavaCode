@@ -51,10 +51,10 @@ public class PlayMaker {
 			this.pitches.Out();
 			break;
 		case "double play":
-			DoublePlay();
+			this.plays.DoublePlay();
 			break;
 		case "triple play":
-			TriplePlay();
+			this.plays.TriplePlay();
 			break;
 		default:
 			System.out.println("Invalid play");
@@ -65,36 +65,6 @@ public class PlayMaker {
 		{
 			this.gameData.InningChange();
 		}
-	}
-
-	private void TriplePlay() {
-		if(this.gameData.bases[0] == true && this.gameData.bases[1] == true && this.gameData.outs == 0)
-		{
-			this.gameData.outs = 3;
-			this.gameData.ResetCount();
-		}
-		else
-		{
-			System.out.println("Not enough runners in the right places or too many outs for a triple play.");
-		}
-		
-	}
-
-	private void DoublePlay() {
-		if(this.gameData.bases[0] == true && this.gameData.outs < 2)
-		{
-			this.gameData.outs += 2;
-			this.gameData.ResetCount();
-			this.gameData.EmptyBase(0);
-		}
-		else if(this.gameData.bases[0] == false)
-		{
-			System.out.println("Nobody is on first base");
-		}
-        else
-        {
-            System.out.println("Too many outs for a double play.");
-        }
 	}
 
 }
