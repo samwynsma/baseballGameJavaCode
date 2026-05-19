@@ -18,6 +18,15 @@ public class Pitches {
 		}
     }
 
+    public void Ball() {
+        this.gameData.balls++;
+        System.out.println("Ball " + this.gameData.balls);
+		if(gameData.balls == 4)
+		{
+			Walk();
+		}
+    }
+
     public void Out() {
         this.gameData.outs++;
         if(this.gameData.outs == 1)
@@ -30,4 +39,27 @@ public class Pitches {
         }
 		this.gameData.ResetCount();
     }
+
+    public void Walk() {
+        System.out.println("That's a walk.");
+        if(!this.gameData.bases[0])
+		{
+			this.gameData.bases[0] = true;
+		}
+		else if(!this.gameData.bases[1])
+		{
+			this.gameData.bases[1] = true;
+		}
+		else if(!this.gameData.bases[2])
+		{
+			this.gameData.bases[2] = true;
+		}
+		else
+		{
+			this.gameData.AddPoints(1);
+		}
+		this.gameData.ResetCount();
+    }
+
+    
 }

@@ -20,7 +20,7 @@ public class PlayMaker {
 			this.pitches.Strike();
 			break;
 		case "ball":
-			Ball();
+			this.pitches.Ball();
 			break;
 		case "foul":
 			Foul();
@@ -29,7 +29,7 @@ public class PlayMaker {
 			this.pitches.Strike();
 			break;
 		case "intentional walk":
-			Walk();
+			this.pitches.Walk();
 			break;
 		case "single":
 			Single();
@@ -111,35 +111,6 @@ public class PlayMaker {
 	private void Foul() {
 		if(this.gameData.strikes < 2)
 			this.gameData.strikes++;
-	}
-
-	private void Ball() {
-		this.gameData.balls++;
-		if(gameData.balls == 4)
-		{
-			Walk();
-		}
-		
-	}
-
-	private void Walk() {
-		if(!this.gameData.bases[0])
-		{
-			this.gameData.bases[0] = true;
-		}
-		else if(!this.gameData.bases[1])
-		{
-			this.gameData.bases[1] = true;
-		}
-		else if(!this.gameData.bases[2])
-		{
-			this.gameData.bases[2] = true;
-		}
-		else
-		{
-			this.gameData.AddPoints(1);
-		}
-		this.gameData.ResetCount();
 	}
 
 	private void Out() {
