@@ -70,6 +70,21 @@ public class PlayMaker {
 		case "caught stealing second":
 			this.running.Steal(false, 0);
 			break;
+		case "caught stealing third":
+			this.running.Steal(false, 1);
+			break;
+		case "caught stealing home":
+			this.running.Steal(false, 2);
+			break;
+		case "steal second":
+			this.running.Steal(true, 0);
+			break;
+		case "steal third":
+			this.running.Steal(true, 1);
+			break;
+		case "steal home":
+			this.running.Steal(true, 2);
+			break;
 		default:
 			System.out.println("Invalid play");
 			break;
