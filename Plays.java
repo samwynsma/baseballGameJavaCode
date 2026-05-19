@@ -43,6 +43,7 @@ public class Plays {
     public void DoublePlay() {
         if(this.gameData.bases[0] == true && this.gameData.outs < 2)
 		{
+            System.out.println("The defense turned that grounder into a double play.");
 			this.gameData.outs += 2;
 			this.gameData.ResetCount();
 			this.gameData.EmptyBase(0);
@@ -60,6 +61,7 @@ public class Plays {
     public void TriplePlay() {
         if(this.gameData.bases[0] == true && this.gameData.bases[1] == true && this.gameData.outs == 0)
 		{
+            System.out.println("Poor baserunning from the offense. We've got ourselves a triple play on our hands.");
 			this.gameData.outs = 3;
 			this.gameData.ResetCount();
 		}
