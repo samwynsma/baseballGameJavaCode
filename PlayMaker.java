@@ -5,6 +5,7 @@ public class PlayMaker {
 	private GameData gameData;
     private Plays plays;
     private Pitches pitches;
+	private BaseRunning running;
 
 	public PlayMaker(BallTeam team1, BallTeam team2, GameData gameData) {
 		this.team1 = team1;
@@ -12,6 +13,7 @@ public class PlayMaker {
 		this.gameData = gameData;
 		this.pitches = new Pitches(this.gameData);
 		this.plays = new Plays(this.gameData);
+		this.running = new BaseRunning(this.gameData);
 	}
 
 	public void MakePlay(String event) {
@@ -55,6 +57,9 @@ public class PlayMaker {
 			break;
 		case "triple play":
 			this.plays.TriplePlay();
+			break;
+		case "pickoff first":
+			this.running.Pickoff(0);
 			break;
 		default:
 			System.out.println("Invalid play");
