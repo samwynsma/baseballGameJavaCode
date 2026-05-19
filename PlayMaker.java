@@ -10,13 +10,14 @@ public class PlayMaker {
 		this.team1 = team1;
 		this.team2 = team2;
 		this.gameData = gameData;
+		this.pitches = new Pitches(this.gameData);
 	}
 
 	public void MakePlay(String event) {
 		switch(event)
 		{
 		case "strike":
-			Strike();
+			this.pitches.Strike();
 			break;
 		case "ball":
 			Ball();
@@ -25,7 +26,7 @@ public class PlayMaker {
 			Foul();
 			break;
 		case "foul bunt":
-			Strike();
+			this.pitches.Strike();
 			break;
 		case "intentional walk":
 			Walk();
@@ -139,14 +140,6 @@ public class PlayMaker {
 			this.gameData.AddPoints(1);
 		}
 		this.gameData.ResetCount();
-	}
-
-	private void Strike() {
-		this.gameData.strikes++;
-		if(gameData.strikes == 3)
-		{
-			Out();
-		}
 	}
 
 	private void Out() {
