@@ -74,4 +74,9 @@ public class Plays {
 			System.out.println("Need more people on base for a triple play.");
 		}
     }
+
+    public void MinorError() {
+        System.out.println("Whoops, team threw an error.");
+        this.gameData.AdvanceBases(0);
+    }
 }

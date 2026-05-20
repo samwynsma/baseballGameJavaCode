@@ -58,6 +58,9 @@ public class PlayMaker {
 		case "triple play":
 			this.plays.TriplePlay();
 			break;
+		case "error":
+			this.plays.MinorError();
+			break;
 		case "pickoff first":
 			this.running.Pickoff(0);
 			break;
