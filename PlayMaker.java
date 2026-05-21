@@ -1,15 +1,11 @@
 public class PlayMaker {
 	
-	private BallTeam team1;
-	private BallTeam team2;
 	private GameData gameData;
     private Plays plays;
     private Pitches pitches;
 	private BaseRunning running;
 
 	public PlayMaker(BallTeam team1, BallTeam team2, GameData gameData) {
-		this.team1 = team1;
-		this.team2 = team2;
 		this.gameData = gameData;
 		this.pitches = new Pitches(this.gameData);
 		this.plays = new Plays(this.gameData);
