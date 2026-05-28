@@ -4,6 +4,7 @@ public class BallTeam {
 	public int score;
 	public int hits;
 	public int errors;
+	public BallPlayer[] teamPlayers;
 	
 	
 	public BallTeam(String teamName) {
@@ -11,6 +12,11 @@ public class BallTeam {
 		this.score = 0;
 		this.hits = 0;
 		this.errors = 0;
+		teamPlayers = new BallPlayer[9];
+		for(int i = 0; i < 9; i++)
+		{
+			teamPlayers[i] = new BallPlayer(teamName + "#" + i);
+		}
 	}
 	
 	public void AddError() {
