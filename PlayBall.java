@@ -13,7 +13,15 @@ public class PlayBall {
 		BaseballGameInfo newGame = new BaseballGameInfo(team1, team2);
 		while(!newGame.gameData.isGameOver)
 		{
-			System.out.println("Batter up, let's see what happens. (Type \"Status\" to get the current game state, type \"Quit\" to quit)");
+			if(newGame.gameData.isTopInning)
+			{
+				int playerNumber = newGame.gameData.team1.currentPlayer;
+				System.out.println("Welcome to the plate, " + newGame.gameData.team1.teamPlayers[playerNumber].playerName +  ", let's see what happens. (Type \"Status\" to get the current game state, type \"Quit\" to quit)");
+			}
+			else
+			{
+				System.out.println("Batter up, let's see what happens. (Type \"Status\" to get the current game state, type \"Quit\" to quit)");
+			}
 			String event = teamText.nextLine().toLowerCase();
 			if(event.equals("status"))
 			{

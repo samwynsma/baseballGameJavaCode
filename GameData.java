@@ -110,6 +110,18 @@ public class GameData {
 	public void ResetCount() {
 		this.strikes = 0;
 		this.balls = 0;
+		if(this.isTopInning)
+		{
+			team1.currentPlayer++;
+			if(team1.currentPlayer >= 9)
+				team1.currentPlayer = 0;
+		}
+		else
+		{
+			team2.currentPlayer++;
+			if(team2.currentPlayer >= 9)
+				team2.currentPlayer = 0;
+		}
 	}
 	
 	public void AdvanceBases(int baseCount) {
