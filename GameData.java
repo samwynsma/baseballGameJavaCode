@@ -82,6 +82,7 @@ public class GameData {
 	public void InningChange() {
 		if(this.isTopInning)
 		{
+			System.out.println("That's the end of the top half of inning " + this.inning + ". Now it is " + team2.name + "'s time to bat.");
 			this.isTopInning = false;
 		}
 		else if(this.inning >= 9 && team1.score > team2.score)
@@ -90,6 +91,7 @@ public class GameData {
 		}
 		else
 		{
+			System.out.println("That's the end of inning " + this.inning + ". Now it is " + team1.name + "'s time to bat.");
 			this.inning++;
 			this.isTopInning = true;
 		}
