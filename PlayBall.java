@@ -16,11 +16,12 @@ public class PlayBall {
 			if(newGame.gameData.isTopInning)
 			{
 				int playerNumber = newGame.gameData.team1.currentPlayer;
-				System.out.println("Welcome to the plate, " + newGame.gameData.team1.teamPlayers[playerNumber].playerName +  ", let's see what happens. (Type \"Status\" to get the current game state, type \"Quit\" to quit)");
+				System.out.println("Welcome to the plate, " + newGame.gameData.team1.teamPlayers[playerNumber].playerName + ", let's see what happens. (Type \"Status\" to get the current game state, type \"Quit\" to quit)");
 			}
 			else
 			{
-				System.out.println("Batter up, let's see what happens. (Type \"Status\" to get the current game state, type \"Quit\" to quit)");
+				int playerNumber = newGame.gameData.team2.currentPlayer;
+				System.out.println("Welcome to the plate, " + newGame.gameData.team2.teamPlayers[playerNumber].playerName + ", let's see what happens. (Type \"Status\" to get the current game state, type \"Quit\" to quit)");
 			}
 			String event = teamText.nextLine().toLowerCase();
 			if(event.equals("status"))
@@ -37,7 +38,18 @@ public class PlayBall {
 				newGame.playMaker.MakePlay(event);
 			}
 		}
-		System.out.println("Game Over: This is the result: ");
+		if(newGame.gameData.team1.score > newGame.gameData.team2.score)
+		{
+			System.out.println("Game Over: " + newGame.gameData.team1.name + " wins. This is the result: ");
+		}
+		else if(newGame.gameData.team1.score == newGame.gameData.team2.score)
+		{
+			System.out.println("Game Over: This is the result: ");
+		}
+		else
+		{
+			System.out.println("Game Over: " + newGame.gameData.team2.name + " wins. This is the result: ");
+		}
 		newGame.gameData.DisplayStatus();
 		teamText.close();
 	}

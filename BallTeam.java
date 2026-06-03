@@ -17,7 +17,7 @@ public class BallTeam {
 		teamPlayers = new BallPlayer[9];
 		for(int i = 0; i < 9; i++)
 		{
-			teamPlayers[i] = new BallPlayer(teamName + "#" + i);
+			teamPlayers[i] = new BallPlayer(teamName + " #" + i);
 		}
 	}
 	
