@@ -109,7 +109,7 @@ public class PlayBallGUI extends JFrame {
         int playerNumber = team.currentPlayer;
         String playerName = team.teamPlayers[playerNumber].playerName;
         promptLabel.setText("At bat: " + playerName + " — enter a play or click Status.");
-        appendOutput("Welcome to the plate, " + playerName + ", let's see what happens. (Type \"Status\" to get the current game state, type \"Quit\" to quit)\n");
+        appendOutput("Welcome to the plate, " + playerName + ", let's see what happens. (Type \"Status\" to get the current game state, type \"Show Plays\" to see the valid play types, type \"Quit\" to quit)\n");
         commandField.setText("");
         commandField.requestFocusInWindow();
     }
@@ -125,6 +125,8 @@ public class PlayBallGUI extends JFrame {
         appendOutput("> " + event + "\n");
         if (event.equals("status")) {
             displayStatus();
+        } else if (event.equals("show plays")){
+            appendOutput("The possible plays are: strike, ball, foul, foul bunt, intentional walk, passed ball, single, double, triple, home run, out, double play, triple play, error, pickoff first, pickoff second, pickoff third, caught stealing second, caught stealing third, caught stealing home, steal second, steal third, steal home.");
         } else if (event.equals("quit")) {
             appendOutput("Game has been aborted.\n");
             disableControls();
